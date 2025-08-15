@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementen Gids - Fictief Geld Systeem</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="watermark"></div>
+    <header>
+        <img class="logo" src="https://storage.googleapis.com/bacon-prod-uploaded-files/editor-files/6d555c82-e8c0-43ac-91c6-1215b630e2f5/Logo%20rood%20groen.png" alt="Logo Waterscouting" onerror="this.src='https://placehold.co/42x42/333333/ffffff?text=LOGO'" />
+        <div class="title">
+            <strong>Fictief Geld Systeem</strong>
+            <span>Waterscouting St. Willibrordus · Gouda</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Knoppen en invoervelden</h2>
+        <p>
+            <button>Standaard knop</button>
+            <button class="red">Rode knop</button>
+            <button class="ghost">Ghost knop</button>
+            <button disabled>Uitgeschakeld</button>
+        </p>
+
+        <p>
+            <input type="text" placeholder="Een invoerveld" />
+            <select><option>Selecteer een optie</option></select>
+        </p>
+
+        <h3>Badges</h3>
+        <p>
+            Een gewone badge: <span class="badge">gast</span><br />
+            Een admin badge: <span class="badge admin">admin</span><br />
+            Een co-admin badge: <span class="badge coadmin">co-admin</span>
+        </p>
+
+        <h3>Lijstitems en kaarten</h3>
+        <div class="item">
+            <span>Dit is een lijstitem</span>
+            <span><button>Actie</button></span>
+        </div>
+        <div class="item">
+            <span>Nog een lijstitem</span>
+            <span><span class="badge">Nieuw</span></span>
+        </div>
+        <hr />
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <div class="account-card green"><strong>Groene kaart</strong><span>Saldo €10.00</span></div>
+            <div class="account-card orange"><strong>Oranje kaart</strong><span>Saldo €-5.00</span></div>
+            <div class="account-card red"><strong>Rode kaart</strong><span>Saldo €-15.00</span></div>
+        </div>
+
+        <h3>Tabel</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kolom 1</th>
+                    <th>Kolom 2</th>
+                    <th>Kolom 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rij 1, Cel 1</td>
+                    <td>Rij 1, Cel 2</td>
+                    <td>Rij 1, Cel 3</td>
+                </tr>
+                <tr>
+                    <td>Rij 2, Cel 1</td>
+                    <td>Rij 2, Cel 2</td>
+                    <td>Rij 2, Cel 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modalContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

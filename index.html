@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fictief Geld Systeem</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="watermark"></div>
+<header>
+  <img class="logo" src="https://storage.googleapis.com/bacon-prod-uploaded-files/editor-files/6d555c82-e8c0-43ac-91c6-1215b630e2f5/Logo%20rood%20groen.png" alt="Logo Waterscouting" onerror="this.src='https://placehold.co/42x42/333333/ffffff?text=LOGO'">
+  <div class="title">
+    <strong>Fictief Geld Systeem</strong>
+    <span>Waterscouting St. Willibrordus · Gouda</span>
+  </div>
+</header>
+
+<div class="container" id="homeScreen" autocomplete="off">
+  <h2>Kies je account</h2>
+  <div id="accountButtons"></div>
+  <hr>
+  <div class="item">
+    <span>Beheerder inloggen</span>
+    <span style="display:flex; gap:6px; align-items:center;">
+      <select id="adminAccountSelect" style="min-width:220px" autocomplete="off"></select>
+      <input
+        type="password"
+        id="adminCode"
+        placeholder="Pincode (4 cijfers)"
+        maxlength="4"
+        inputmode="numeric"
+        style="width:140px;"
+        autocomplete="new-password"
+        autocapitalize="off"
+        spellcheck="false"
+        disabled
+      >
+      <button id="adminLoginBtn">Inloggen</button>
+    </span>
+  </div>
+  <p class="small">Tip: Alleen accounts met rol <strong>Admin</strong> of <strong>Co-admin</strong> kunnen inloggen op het beheer.</p>
+</div>
+
+<div class="container hidden" id="pinScreen" autocomplete="off">
+  <h2>Inloggen</h2>
+  <p id="selectedUserName"></p>
+  <input type="password" id="pincode" placeholder="Pincode (4 cijfers)" maxlength="4" inputmode="numeric" autocomplete="new-password" autocapitalize="off" spellcheck="false">
+  <button id="userLoginBtn">Inloggen</button>
+  <button class="red" id="cancelPinBtn">Annuleren</button>
+</div>
+
+<div class="container hidden" id="userScreen">
+  <h2 id="welcome"></h2>
+  <p>Saldo: €<span id="saldo"></span></p>
+  <div id="productList"></div>
+  <div class="cart-summary">
+    <span><strong>Totaal:</strong> €<span id="cartTotal">0.00</span> — <span id="cartItems">0</span> item(s)</span>
+    <span>
+      <button id="checkoutBtn" disabled>🛒 Afrekenen</button>
+      <button class="ghost" id="clearCartBtn">Winkelwagen leegmaken</button>
+    </span>
+  </div>
+  <hr>
+  <button class="red" id="logoutUserBtn">Uitloggen</button>
+</div>
+
+<div class="container hidden" id="adminScreen">
+  <h2 id="adminTitle">Admin Paneel</h2>
+  <div id="adminSections"></div>
+
+  <h3>Logboek</h3>
+  <div id="logList"></div>
+  <div id="logActions" class="item">
+    <span class="small">Logboek acties</span>
+    <span>
+      <button id="exportCsvBtn">📥 Exporteer naar CSV</button>
+      <button class="red" id="clearLogsBtn">Logboek wissen</button>
+    </span>
+  </div>
+
+  <div id="dataBeheer" class="hidden">
+    <h3>Data beheer</h3>
+    <div class="item">
+      <span>Volledige data (accounts, producten, logs)</span>
+      <span>
+        <button id="exportJsonBtn">⬇️ Exporteer JSON</button>
+        <label style="margin-left:6px;">
+          <input type="file" id="importFile" accept=".json" class="hidden">
+          <button id="importJsonBtn">⬆️ Importeer JSON</button>
+        </label>
+        <button class="red" id="resetBtn">Herstel naar standaard</button>
+      </span>
+    </div>
+  </div>
+
+  <hr>
+  <button class="red" id="logoutAdminBtn">Uitloggen</button>
+</div>
+
+<div id="modalContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

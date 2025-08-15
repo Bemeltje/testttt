@@ -1,0 +1,215 @@
+/* Kleuren en variabelen */
+:root {
+  --brand-red: #d62828;
+  --brand-green: #1c7c54;
+  --brand-cream: #ffffff;
+  --text: #333;
+  --muted: #666;
+}
+
+/* Algemene styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, rgba(28,124,84,.07), rgba(214,40,40,.06));
+  margin: 0;
+  color: var(--text);
+  position: relative;
+}
+header {
+  background: linear-gradient(90deg, var(--brand-green), var(--brand-red));
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+header img.logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+}
+header .title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+header .title strong {
+  font-size: 1.15rem;
+  letter-spacing: .3px;
+}
+header .title span {
+  font-size: .8rem;
+  opacity: .95;
+}
+
+/* Container voor breder canvas */
+.container {
+  max-width: 1600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1900px){
+  .container {
+    max-width: 1800px;
+  }
+}
+
+h2, h3 {
+  margin-top: 0;
+}
+button {
+  padding: 8px 14px;
+  border: 0;
+  background: var(--brand-green);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 3px;
+  font-size: .95em;
+  transition: filter .15s, transform .05s;
+}
+button:hover {
+  filter: brightness(.95);
+  transform: translateY(-1px);
+}
+button.red {
+  background: var(--brand-red);
+}
+button.red:hover {
+  filter: brightness(.95);
+}
+button.ghost {
+  background: #eef7f2;
+  color: var(--brand-green);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+input, select {
+  padding: 9px;
+  margin: 5px 0;
+  width: 100%;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  font-size: .95em;
+}
+.hidden {
+  display: none;
+}
+.item {
+  border-bottom: 1px solid #f1f3f5;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.item:last-child {
+  border-bottom: none;
+}
+.badge {
+  background: #f39c12;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: .8em;
+  border-radius: 6px;
+  margin-left: 5px;
+}
+.badge.admin {
+  background: var(--brand-red);
+}
+.badge.coadmin {
+  background: var(--brand-green);
+}
+
+/* Meer kolommen op brede schermen */
+#accountButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 12px;
+}
+.account-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 5px solid transparent;
+  transition: transform .1s;
+  cursor: pointer;
+}
+.account-card:hover {
+  transform: translateY(-2px);
+}
+.account-card.green {
+  border-left-color: var(--brand-green);
+}
+.account-card.orange {
+  border-left-color: #f39c12;
+}
+.account-card.red {
+  border-left-color: var(--brand-red);
+}
+.account-card strong {
+  font-size: 1.1em;
+}
+
+/* Tabellen en logboek */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9em;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #eceff1;
+  padding: 6px;
+  text-align: left;
+}
+th {
+  background: #f8fafb;
+}
+.low-stock {
+  color: var(--brand-red);
+  font-weight: bold;
+}
+.small {
+  font-size: .85em;
+  color: var(--muted);
+}
+.cart-summary {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f7fbff;
+  border: 1px solid #dfeaf7;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cart-summary strong {
+  font-size: 1.05em;
+}
+.watermark {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* Je logo gebruikt als watermerk */
+  background: url('
